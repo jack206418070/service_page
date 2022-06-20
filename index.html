@@ -1,0 +1,162 @@
+<div class="content p-3">
+  <style>
+    *{
+      font-family: Arial, sans-serif;
+    }
+    .rwd-table{
+      width: 1000px;
+      margin: 0 auto;
+    }
+    table, tr{
+      border: 1px solid #000400;
+      border-collapse: collapse;
+    }
+    tr {
+      text-align: left;
+    }
+    td, th{
+      padding: 20px 10px;
+      border: 1px solid #000400;
+    }
+    h3{
+      text-align: center;
+      font-size: 32px;
+      letter-spacing: 1.3px;
+    }
+  </style>
+  <h3>網頁服務報價</h3>
+  <table class="rwd-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th width="300px">服務</th>
+        <th>說明</th>
+        <th width="200px">收費</th>
+      </tr>
+    </thead>
+    <tbody id="number">
+      <tr>
+        <td data-th="編號">1</td>
+        <td data-th="服務">SPA網頁製作(客製化版型, RWD) <br> 外加功能製作換串接</td>
+        <td data-th="說明">
+          使用 Vue.js <br>
+          案主提供 設計稿客製化版型 (含 RWD) <br>
+          一頁 / 2500 <br><br>
+          資料串接 (由案主方提供 API) <br>
+          一頁 / 600 <br>
+          (若需要幫忙設計 API 及後端 價格另議)
+
+          金流 10,000
+          會員系統 15,000
+        </td>
+        <td data-th="收費(未稅)">視頁面數量 以及製作複雜度做最後審核</td>
+      </tr>
+      <tr>
+        <td data-th="編號">2</td>
+        <td data-th="服務">形象網站-RWD一頁式方案</td>
+        <td data-th="說明">提供後台帳號密碼登入、<br>系統設定、關於我們、最新消息<br>產品專區、聯絡我們、首頁輪播圖<br>
+          <div class="no_money col-12 mt-1">
+            <br>贈送 SSL-經濟方案 價值:500
+            <br>贈送 簡易SEO方案 價值:1,000
+            <br>贈送 域名一年(限10美元域名) 價值:300
+            <br>贈送 主機一年 價值:3,500
+          </div>
+        </td>
+        <td data-th="收費(未稅)">11,000／次
+          <br>每年主機+域名費用
+          <br>3,800／年(第一年免費)
+        </td>
+      </tr>
+      
+      <tr>
+        <td data-th="編號">3</td>
+        <td data-th="服務">RWD一頁式購物車+會員+金流方案</td>
+        <td data-th="說明">提供後台<br><span class="red">購物車</span><br>帳號密碼登入、系統設定、關於我們、最新消息、<br>產品專區、首頁輪播圖、會員管理、訂單管理、<span
+            class="red">頁尾聯絡資訊</span><br>
+          <div class="no_money col-12 mt-1">
+            <br>贈送 SSL-經濟方案 價值:500
+            <br>贈送 簡易SEO方案 價值:1,000
+            <br>贈送 域名一年(限10美元域名) 價值:300
+            <br>贈送 主機一年 價值:3,500
+          </div>
+        </td>
+        <td data-th="收費(未稅)">70,000／次
+          <br>每年主機+域名費用
+          <br>3,800／年(第一年免費)
+        </td>
+      </tr>
+      <tr>
+        <td data-th="編號">4</td>
+        <td data-th="服務">RWD購物車+會員+金流方案</td>
+        <td data-th="說明">提供後台<br><span class="red">購物車</span><br>帳號密碼登入、系統設定、關於我們、最新消息、<br><span
+            class="red">常見問答、聯絡我們、購物須知、隱私權</span>、<br>產品專區、首頁輪播圖、內頁横幅、會員管理、訂單管理<br>
+          <div class="no_money col-12 mt-1">
+            <br>贈送 SSL-經濟方案 價值:500
+            <br>贈送 簡易SEO方案 價值:1,000
+            <br>贈送 域名一年(限10美元域名) 價值:300
+            <br>贈送 主機一年 價值:3,500
+          </div>
+        </td>
+        <td data-th="收費(未稅)">80,000／次
+          <br>每年主機+域名費用
+          <br>3,800／年(第一年免費)
+        </td>
+      </tr>
+      <tr>
+        <td data-th="編號">5</td>
+        <td data-th="服務">會員系統</td>
+        <td data-th="說明">提供前後台<br>帳號密碼登入 會員管理<br>，如需其他功能另行報價</td>
+        <td data-th="收費(未稅)">15,000／次</td>
+      </tr>
+      <tr>
+        <td data-th="編號">6</td>
+        <td data-th="服務">金流-信用卡刷卡</td>
+        <td data-th="說明">藍新、綠界、Paypal(以上皆需自行申請，申請完畢提供金鑰即可)</td>
+        <td data-th="收費(未稅)">10,000／項</td>
+      </tr>
+      <tr>
+        <td data-th="編號">7</td>
+        <td data-th="服務">購物-庫存系統</td>
+        <td data-th="說明">商品增加庫存計算，判斷是否持續販售</td>
+        <td data-th="收費(未稅)">8,000／次</td>
+      </tr>
+      <tr>
+        <td data-th="編號">8</td>
+        <td data-th="服務">購物-優惠碼</td>
+        <td data-th="說明">購物車優惠碼管理後台，管理商品折扣與使用紀錄</td>
+        <td data-th="收費(未稅)">10,000／次</td>
+      </tr>
+      <tr>
+        <td data-th="編號">9</td>
+        <td data-th="服務">其他簡易頁面</td>
+        <td data-th="說明">提供後台<br>文章、部落格、隱私權、條款、購物須知 等等 每頁約1,500<br>，如功能複雜另行報價，如需其他功能另行報價</td>
+        <td data-th="收費(未稅)">1,500／每項</td>
+      </tr>
+      <tr>
+        <td data-th="編號">10</td>
+        <td data-th="服務">SSL-收費方案</td>
+        <td data-th="說明">讓您的網站使用Https加密連線 避免連線受到監控<br>商用 SSL 單網域 (每年需重新設定)</td>
+        <td data-th="收費(未稅)">1,000／年</td>
+      </tr>
+      <tr>
+        <td data-th="編號">11</td>
+        <td data-th="服務">SSL-經濟方案</td>
+        <td data-th="說明">讓您的網站使用Https加密連線 避免連線受到監控<br>協助設定免費SSL，使用 cloudflare 服務，收一次設定費</td>
+        <td data-th="收費(未稅)">500／次</td>
+      </tr>
+      <tr>
+        <td data-th="編號">12</td>
+        <td data-th="服務">RWD協助</td>
+        <td data-th="說明">協助處理RWD破版等問題，如頁面功能複雜另行報價</td>
+        <td data-th="收費(未稅)">1,000／頁</td>
+      </tr>
+      <tr>
+        <td data-th="編號">13</td>
+        <td data-th="服務">線上諮詢</td>
+        <td data-th="說明">想要了解看看自己的系統怎樣規劃才合理划算嗎?<br>這裡提供您一些專業的諮詢服務，如系統終由我方承包，此費用不收。<br>(可使用Google meet ,
+          Line)<br>(文字對談的部分不會收取)</td>
+        <td data-th="收費(未稅)">300／時</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

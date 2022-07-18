@@ -11,7 +11,7 @@
 <body>
   <input type="file" onchange="onImport(this)" />
   <div id="demo"></div>
-  <table id="table1" border="1" cellspacing="0" cellpadding="0">
+  <table id="table1" border="1" cellspacing="0" cellpadding="0" style="display: none">
     <tr>
       <td>序號</td>
       <td>姓名</td>
@@ -38,10 +38,10 @@
     </tr>
   </table>
 
-  <button id="btn" onclick="btn_export()">导出</button>
+  <button id="btn" onclick="btn_export()" style="display:none">导出</button>
 </body>
-<script src="./node_modules/xlsx-style/dist/xlsx.core.js"></script>
-<script src="./node_modules/xlsx/dist/xlsx.extendscript.js"></script>
+<script src="./xlsx.core.js"></script>
+<script src="./xlsx.extendscript.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.js"></script>
 <script>
   function sheet2blob(sheet, sheetName) {

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box2{
+      box-sizing: border-box;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 10px solid transparent;
+      border-image: repeating-linear-gradient(225deg, red, blue 5px, transparent 4px, transparent 8px) 1;
+      clip-path: circle(50%);
+    }
+    .clip-circle {
+      height: 60px;
+      width: 60px;
+      clip-path: ellipse(60px 40px at 75px 30px);
+      background-color: #000;
+      /* OLD VALUE example: circle(245px, 140px, 50px); */
+      /* Yep, even the new clip-path has deprecated stuff. */
+    }
+    .clip-ellipse {
+      clip-path: ellipse(60px 40px at 75px 30px);
+      /* OLD VALUE example: ellipse(245px, 80px, 75px, 30px); */
+    }
+    .clip-polygon {
+      clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+      /* Note that percentages work as well as px */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <svg width="1440" height="347" viewBox="0 0 1440 347" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M0 135.261H60C120 135.261 240 135.261 360 126.7C480 118.139 600 99.7929 720 74.109C840 47.2021 960 11.7338 1080 3.17253C1200 -5.38877 1320 11.7338 1380 21.5182L1440 30.0795V346.848H1380C1320 346.848 1200 346.848 1080 346.848C960 346.848 840 346.848 720 346.848C600 346.848 480 346.848 360 346.848C240 346.848 120 346.848 60 346.848H0V135.261Z"
+        fill="url(#paint0_linear_623_3339)" />
+      <defs>
+        <linearGradient id="paint0_linear_623_3339" x1="-450" y1="426.86" x2="1100.08" y2="-930.034"
+          gradientUnits="userSpaceOnUse">
+          <stop offset="0.124993" :stop-color="color['2']" />
+          <stop offset="0.927091" :stop-color="color['1']" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+
+    <div class="box2">
+
+    </div>
+    <div class="clip-circle"></div>
+  </div>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script>
+    const app = Vue.createApp({
+      data () {
+        return {
+          color: {
+            '1': 'red',
+            '2': 'red'
+          }
+        }
+      },
+      mounted () {
+        console.log(this.color)
+      }
+    })
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

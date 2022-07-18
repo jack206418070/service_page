@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      list-style: none;
+    }
+    body{
+      overflow-x: hidden;
+    }
+    .roadmap {
+      margin: 0 auto;
+      margin-top: 100px;
+      overflow-x: auto;
+      max-width: 1440px;
+      padding: 0 15px;
+    }
+    .roadmap ul{
+      margin: 0 auto;
+      list-style: none;
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+      height: 250px;
+      max-width: 1200px;
+      /* padding: 0 40px; */
+      /* width: 1200px; */
+    }
+    .roadmap ul::before {
+      content: '';
+      position: absolute;
+      height: 5px;
+      width: 98%;
+      background-color: #FF5B00;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+    .roadmap li {
+      position: relative;
+    }
+    .roadmap li .circle {
+      height: 30px;
+      width: 30px;
+      background-color: #FFF0E5;
+      border-radius: 50%;
+      position: relative;
+      border: 2px dashed #FF5B00;
+    }
+    .roadmap .circle::after {
+      position: absolute;
+      content: "";
+      height: 12px;
+      width: 12px;
+      background-color: #FF5B00;
+      border: 2px dashed #FF5B00;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .roadmap .circle.top-s::before {
+      content: "";
+      position: absolute;
+      height: 30px;
+      top: -35px;
+      width: 2px;
+      left: 12px;
+      border-left: 2px dashed #FF5B00;
+    }
+    .roadmap .circle p{
+      width: 100px;
+      white-space: nowrap;
+      text-align: center;
+    }
+    .roadmap .circle.top-s p{
+      position: absolute;
+      top: -65px;
+      left: -35px;
+    }
+    .roadmap .circle.top-l::before {
+      content: "";
+      position: absolute;
+      height: 60px;
+      top: -65px;
+      width: 2px;
+      left: 12px;
+      border-left: 2px dashed #FF5B00;
+    }
+    .roadmap .circle.top-l p{
+      position: absolute;
+      top: -95px;
+      left: -35px;
+    }
+    .roadmap .circle.bottom-l::before {
+      content: "";
+      position: absolute;
+      height: 60px;
+      bottom: -65px;
+      width: 2px;
+      left: 12px;
+      border-left: 2px dashed #FF5B00;
+    }
+    .roadmap .circle.bottom-l p{
+      position: absolute;
+      bottom: -95px;
+      left: -35px;
+    }
+    .roadmap .circle.bottom-s::before {
+      content: "";
+      position: absolute;
+      height: 30px;
+      bottom: -35px;
+      width: 2px;
+      left: 12px;
+      border-left: 2px dashed #FF5B00;
+    }
+    .roadmap .circle.bottom-s p{
+      position: absolute;
+      bottom: -65px;
+      left: -35px;
+    }
+    .roadmap p.last-goal{
+      width: 80px;
+      white-space: normal !important;
+      left: -55px !important;
+      text-align: right;
+    }
+    .roadmap li:first-child::before{
+      display: none;
+    }
+    .roadmap li:first-child::after{
+      display: none;
+    }
+    .roadmap li:before{
+      content: "";
+      position: absolute;
+      left: -14px;
+      top: 16px;
+      height: 5px;
+      width: 15px;
+      background-color: #FF5B00;
+      transform: rotate(-45deg)
+    }
+    .roadmap li:after{
+      content: "";
+      position: absolute;
+      left: -14px;
+      top: 7px;
+      height: 5px;
+      width: 15px;
+      background-color: #FF5B00;
+      transform: rotate(45deg)
+    }
+
+    /*roadmap2*/
+    .roadmap2{
+      max-width: 1440px;
+      padding: 0 20px;
+      margin: 0 auto;
+      margin-top: 200px;
+    }
+    .roadmap2 ul{
+      margin: 0 auto;
+      height: 450px;
+      max-width: 1200px;
+      padding: 0 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+    .roadmap2 ul::before{
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 5px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #26BEC9;
+    }
+    .roadmap2 li{
+      position: relative;
+    }
+    .roadmap2 .circle{
+      position: absolute;
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      background-color: #26BEC9;
+      top: -6px;
+      right: 0;
+      left: 0;
+      margin: auto;
+    }
+    .roadmap2 li .top-s{
+      position: absolute;
+      height: 50px;
+      width: 1px;
+      border-left: 1px solid #26BEC9;
+      top: -50px;
+      left: 3px;
+    }
+    .roadmap2 li .top-l{
+      position: absolute;
+      height: 100px;
+      width: 1px;
+      border-left: 1px solid #26BEC9;
+      top: -100px;
+      left: 3px;
+    }
+    .roadmap2 li .bottom-s{
+      position: absolute;
+      height: 50px;
+      width: 1px;
+      border-left: 1px solid #26BEC9;
+      bottom: -50px;
+      left: 3px;
+    }
+    .roadmap2 li.bottom-s .circle, .roadmap2 li.bottom-l .circle{
+      top: 0;
+      bottom: -6px;
+    }
+    .roadmap2 li .bottom-l{
+      position: absolute;
+      height: 100px;
+      width: 1px;
+      border-left: 1px solid hsl(184, 68%, 47%);
+      bottom: -100px;
+      left: 3px;
+    }
+    .roadmap2 li .top-s::after, .roadmap2 li .top-l::after{
+      position: absolute;
+      content: "";
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #fff;
+      left: -8px;
+      top: -22px;
+      margin: auto;
+    }
+    .roadmap2 li .bottom-s::after, .roadmap2 li .bottom-l::after{
+      position: absolute;
+      content: "";
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #fff;
+      left: -8px;
+      bottom: -22px;
+      margin: auto;
+    }
+    .roadmap2 li .top-s::before, .roadmap2 li .top-l::before{
+      position: absolute;
+      content: "";
+      width: 30px;
+      height: 30px;
+      border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+      background-color: #26BEC9;
+      transform: rotate(-225deg);
+      top: -30px;
+      left: -15px;
+    }
+    .roadmap2 li .bottom-l::before, .roadmap2 li .bottom-s::before{
+      position: absolute;
+      content: "";
+      width: 30px;
+      height: 30px;
+      border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+      background-color: #26BEC9;
+      transform: rotate(-45deg);
+      bottom: -30px;
+      left: -15px;
+    }
+    .roadmap2 li p{
+      width: 100px;
+      white-space: nowrap;
+      position: absolute;
+      text-align: center;
+      left: -48px;
+    }
+    .roadmap2 li.top-s p{
+      top: -110px;
+    }
+    .roadmap2 li.top-l p{
+      top: -160px;
+    }
+    .roadmap2 li.bottom-s p{
+      bottom: -110px;
+    }
+    .roadmap2 li.bottom-l p{
+      bottom: -160px;
+    }
+    .d1{
+    width:200px;height:150px;
+    overflow-x:hidden;
+    background:red;position:relative;
+    }
+  .d1 .d2{
+    width:300px;height:100%;background:blue;
+    position:absolute;
+  }
+  .d3{
+    width:200px;height:100%;
+    overflow-y:visible;
+    background:red;position:relative;
+  }
+  .wrap{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #ccc;
+    /* height: 1000px; */
+    /* height: 100%; */
+    overflow-x: hidden;
+  }
+  .box1{
+    width: 1400px;
+    background-color: red;
+    height: 400px;    
+  }
+  .box2{
+    width: 1300px;
+    background-color: #000;
+    height: 500px;
+  }
+  </style>
+</head>
+<body>
+  <div class="roadmap">
+    <ul>
+      <li class="roadmap-item">
+        <div class="circle top-s">
+          <p class="first-goal">目的地</p>
+        </div>
+      </li>
+      <li class="roadmap-item">
+        <div class="circle bottom-l">
+          <p>目的地是這裡</p>
+        </div>
+      </li>
+      <li class="roadmap-item">
+        <div class="circle top-l">
+          <p>目的地是這裡</p>
+        </div>
+      </li>
+      <li class="roadmap-item">
+        <div class="circle bottom-s">
+          <p>目的地是這裡</p>
+        </div>
+      </li>
+      <li class="roadmap-item">
+        <div class="circle top-s">
+          <p>目的地裡</p>
+        </div>
+      </li>
+      <li class="roadmap-item last">
+        <div class="circle bottom-l">
+          <p>目的</p>
+        </div>
+      </li>
+      <li class="roadmap-item">
+        <div class="circle top-l">
+          <p>目的地到了</p>
+        </div>
+      </li>
+      <li class="roadmap-item">
+        <div class="circle bottom-s">
+          <p>目的</p>
+        </div>
+      </li>
+      <li class="roadmap-item">
+        <div class="circle top-s">
+          <p>目的地裡123</p>
+        </div>
+      </li>
+      <li class="roadmap-item">
+        <div class="circle bottom-l">
+          <p>目的地裡123</p>
+        </div>
+      </li>
+      <li class="roadmap-item">
+        <div class="circle top-l">
+          <p>目的地裡123</p>
+        </div>
+      </li>
+      <li class="roadmap-item">
+        <div class="circle bottom-s">
+          <p>目的地裡123</p>
+        </div>
+      </li>
+      <li class="roadmap-item">
+        <div class="circle top-l">
+          <p>目的地裡123</p>
+        </div>
+      </li>
+      <li class="roadmap-item">
+        <div class="circle bottom-l">
+          <p class="last-goal">目的</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="roadmap2">
+    <ul>
+      <li class="top-s">
+        <p>目的地</p>
+        <div class="top-s"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="bottom-s">
+        <p>目的地</p>
+        <div class="bottom-s"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="top-l">
+        <p>目的地</p>
+        <div class="top-l"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="bottom-l">
+        <p>目的地</p>
+        <div class="bottom-l"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="top-s">
+        <p>目的地</p>
+        <div class="top-s"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="bottom-s">
+        <p>目的地</p>
+        <div class="bottom-s"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="top-l">
+        <p>目的地</p>
+        <div class="top-l"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="bottom-l">
+        <p>目的地</p>
+        <div class="bottom-l"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="top-s">
+        <p>目的地</p>
+        <div class="top-s"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="bottom-s">
+        <p>目的地</p>
+        <div class="bottom-s"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="top-l">
+        <p>目的地</p>
+        <div class="top-l"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="bottom-l">
+        <p>目的地</p>
+        <div class="bottom-l"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="top-s">
+        <p>目的地</p>
+        <div class="top-s"></div>
+        <div class="circle"></div>
+      </li>
+      <li class="bottom-s">
+        <p>目的地</p>
+        <div class="bottom-s"></div>
+        <div class="circle"></div>
+      </li>
+    </ul>
+  </div>
+  <div class="wrap">
+    <div class="box1">
+      <div class="box2">
+
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

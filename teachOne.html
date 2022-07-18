@@ -1,0 +1,27 @@
+<body>
+  <h2>JavaScript getFullYear()</h2>
+  <p>The getFullYear() method returns the full year of a date:</p>
+  <p id="demo"></p>
+  <p class="minutes">05</p>
+  <button class="check">check</button>
+  <script>
+    const t = document.querySelector('.minutes');
+    const check = document.querySelector('.check');
+    check.addEventListener("click", e => {
+      let todoText = t.textContent;
+      if (m > todoText && h > 00) {
+        alert("功課遲交");
+      } else {
+        console.log(m, todoText);
+        alert("做到好");
+      }
+    })
+  const d = new Date();
+    let c = d.getFullYear();
+    let a = d.getMonth();
+    let s = d.getDate();
+    let m = d.getMinutes();
+    let h = d.getHours();
+    let g = d.getSeconds();
+    document.getElementById("demo").innerHTML = c + "/" + a + "/" + s + "/" + h + "/" + m + "/" + g;
+  </script>
